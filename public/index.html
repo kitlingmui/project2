@@ -1,76 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Index</title>
-
-  <!-- Materialize Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-  <!-- Materialize Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
- 
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
 </head>
 <body>
-    <nav id="mynav" class="black" role="navigation">
-        <div class="nav-wrapper container">
-            <a href="/" ><img id="logo-container" data-toggle="tooltip" title="home" class="brand-logo center" src="img/logo.jpg" alt="homelogo"></a>       
-        </div>
-    </nav>
+    <h1>Hello World!</h1>
+    <form>
+        <label for="name">Name your Character!</label>
+        <input id="characterName" type="text" name="name" placeholder="Character Name"/>
+        <button onclick="addName()">Enter</button>
+    </form>
+    <br><hr><br>
+    <form>
+        <label for="name">Choose your Class!</label>
+        <input id="className" type="text" name="name" placeholder="Class"/>
+        <button onclick="addClass()"> Enter</button>
+    </form>
+    <script>
+        const addName = () => {
+            event.preventDefault()
+            fetch('/Characters', {
+                method: 'POST',
+                headers: {'Content-Type' : 'application/json; charset=utf-8'},
+                body: JSON.stringify({
+                    name: document.querySelector('#characterName')
+                })
+            })
+        }
+        const addClass = () => {
+            event.preventDefault()
+            fetch('/Items', {
+                method: 'POST',
+                headers: {'Content-Type' : 'application/json; charset=utf-8'},
+                body: JSON.stringify({
+                    class: document.querySelector('#className')
+                })
+            })
+        }
+    </script>
 
-    <div id="index-banner" class="parallax-container">
-      <div class="section no-pad-bot">
-        <div class="container">
-            <h1 class="header center deep-orange-text text-darken-1 title-name">RPG Game</h1>
 
-            <div class="container" id="menu">
-              <div class="row center">
-                <a href="/game" id="download-button" class="btn-large waves-effect waves-light orange darken-2">Start Game</a>
-              </div>
-              <div class="row center">
-                <a href="/score" id="download-button" class="btn-large waves-effect waves-light orange darken-1">Score</a>
-              </div>
-              <div class="row center">
-                <a href="/help" id="download-button" class="btn-large waves-effect waves-light orange darken-1">Help</a>
-              </div>
-            </div>
-
-        </div>
-      </div>
-    </div>
-
-    <footer class="page-footer black">
-        <div class="container">
-        <div class="row">
-            <div class="col l6 s12">
-            <h5 class="white-text">Team6 Members</h5>
-            <ul>
-                <li><a class="white-text" href="#!">Hoang Cao</a></li>
-                <li><a class="white-text" href="#!">Kit Mui</a></li>
-                <li><a class="white-text" href="#!">Kyle Macabasco</a></li>
-                <li><a class="white-text" href="#!">Taylor Darnell</a></li>
-            </ul>
-            </div>
-        </div>
-        </div>
-        <div class="footer-copyright">
-        <div class="container center-align">
-            <a class="brown-text text-lighten-3 center">Copyright@2018</a>
-        </div>
-        </div>
-    </footer>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-
-  </body>
+</body>
 </html>
