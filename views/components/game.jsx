@@ -14,7 +14,7 @@ const Game = () =>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline" rel="stylesheet" />
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    {/* <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> */}
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
  
 </head>
@@ -27,29 +27,23 @@ const Game = () =>
 
     <div id="index-banner" class="parallax-container game-banner">
       <div class="section no-pad-bot">
-        <div class="container">    
-            <h1 class="header" id="type-h">Choose your character...</h1>
-            <img id="char-container"  href="#" src="img/c1.jpg" alt="c1" /> 
-            <img id="char-container"  href="#" src="img/c2.jpg" alt="c2" /> 
-            <img id="char-container"  href="#" src="img/c3.jpg" alt="c3" /> 
-            <img id="char-container"  href="#" src="img/c4.jpg" alt="c4" /> 
-        </div>
-        <div>
-            <h1 class="header" id="type-h">Choose your target...</h1>
-            <img id="char-container"  href="#" src="img/t1.jpg" alt="t1" /> 
-            <img id="char-container"  href="#" src="img/t2.jpg" alt="t2" /> 
-            <img id="char-container"  href="#" src="img/t3.jpg" alt="t3" /> 
+        <div class="container gamescreen">   
+              {/* display logic goes here */}
         </div>
       </div>
     </div>
  
-    <div>
-        <h1>my score panel</h1>
-    </div>
+    <nav id="mynav" class="black" role="navigation">
+        <div class="nav-wrapper container panelscreen">
+           {/* display current game setting goes here */}
+        </div>
+    </nav>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+  <script type="text/javascript" src='./js/gameapp.js' />
 
   </body>
 </html>

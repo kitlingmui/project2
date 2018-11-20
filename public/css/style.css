@@ -38,12 +38,11 @@
     border-radius: 50px;
 }
 
-
 .title-name{
     font-family: 'Bungee Inline', cursive;
 }
 
-#download-button{
+#download-button1,#download-button2,#download-button3{
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
 }
@@ -53,6 +52,7 @@
     padding: 5px;
     height: 300px;
     width: 300px;
+    margin-right: 20px;
 }
 
 .section-help{
@@ -74,6 +74,7 @@
     font-weight: bold;
 }
 
+
 @keyframes type{
     0% {
         width:0ch;
@@ -83,7 +84,32 @@
     }
 }
 
-#char-container{
-    width: 300px;
-    height: 300px;
+#char-container1, #char-container2, #char-container3, #char-container4 {
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px
+}
+
+#char-target1, #char-target2, #char-target3 {
+    align-content: center;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px
+}
+
+.panelscreen{
+    background-color: black;
+    font: 18px;
+    color: white; 
+}
+
+h5{
+    color: white;
+}
+
+#char-panel1{
+    background-color: white;
+    width: 100px;
+    height: 100px;
 }
