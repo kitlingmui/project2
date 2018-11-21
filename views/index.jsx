@@ -7,7 +7,6 @@ const Index = () =>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Index</title>
 
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
@@ -15,7 +14,7 @@ const Index = () =>
     
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline" rel="stylesheet" />
-    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    {/* <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> */}
     <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
     
     </head>
@@ -33,13 +32,13 @@ const Index = () =>
 
                 <div className="container" id="menu">
                 <div className="row center">
-                    <a href="/game" id="download-button" className="btn-large waves-effect waves-light orange darken-2">Start Game</a>
+                    <a href="/game" id="download-button1" className="btn-large waves-effect waves-light orange darken-2">Start Game</a>
                 </div>
                 <div className="row center">
-                    <a href="/score" id="download-button" className="btn-large waves-effect waves-light orange darken-1">Score</a>
+                    <a href="/score" id="download-button2" className="btn-large waves-effect waves-light orange darken-1">Score</a>
                 </div>
                 <div className="row center">
-                    <a href="/help" id="download-button" className="btn-large waves-effect waves-light orange darken-1">Help</a>
+                    <a href="/help" id="download-button3" className="btn-large waves-effect waves-light orange darken-1">Help</a>
                 </div>
                 </div>
 
@@ -68,9 +67,11 @@ const Index = () =>
             </div>
         </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
+    <script type="text/javascript" src='./js/indexapp.js' />
 
     </body>
     </html>
