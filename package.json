@@ -2,8 +2,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "name": "",
-  "version": "",
+  "name": "project2",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
@@ -13,5 +12,20 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "sequelize": "^4.41.2"
-  }
+  },
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kitlingmui/project2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kitlingmui/project2/issues"
+  },
+  "homepage": "https://github.com/kitlingmui/project2#readme"
 }

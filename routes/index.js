@@ -25,8 +25,8 @@ module.exports = app => {
         .then(r => res.json(r))
         .catch(e => console.log(e))
     });
-    app.get('/Items', (req, res) => {
-        db.Items.findAll({})
+    app.get('/Enemies', (req, res) => {
+        db.Enemies.findAll({})
         .then(r => res.json(r))
         .catch(e => console.log(e))
     })
@@ -35,8 +35,8 @@ module.exports = app => {
         .then(r => res.sendStatus(200))
         .catch(e => console.log(e))
     })
-    app.post('/Items', (req, res) => {
-        db.Items.create(req.body)
+    app.post('/Enemies', (req, res) => {
+        db.Enemies.create(req.body)
         .then(r => res.sendStatus(200))
         .catch(e => console.log(e))
     })
