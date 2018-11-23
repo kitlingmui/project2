@@ -32,19 +32,72 @@ $(document).ready(function() {
     updategamedisplay();
 
     function updatepaneldisplay(ch) {
-        $(".panelscreen").html(`
-            <h5>Your character</h5>
-            <img id="char-panel1" data-panel1="c1" data-toggle="tooltip" title="jim" src="img/${ch}.jpg" alt="${ch}"> 
-        `)  
+        $("#game-panel").html(`
+            <div class="row">
+                <div class="col s12 m6 l3 center-align">
+                    <p>Character</p>
+                    <img id="char-panel1" data-panel1="c1" data-toggle="tooltip" title="jim" src="img/${ch}.jpg" alt="${ch}"> 
+                </div>
+                <div class="col s12 m6 l3 center-align">
+                    <p>Target</p>
+                    <img id="char-panel1" data-panel1="c1" data-toggle="tooltip" title="jim" src="img/${ch}.jpg" alt="${ch}"> 
+                </div>
+                <div class="col s12 m6 l3 center-align">
+                    <p>Weapon</p> 
+                    <img id="char-panel1" data-panel1="c1" data-toggle="tooltip" title="jim" src="img/${ch}.jpg" alt="${ch}">
+                </div>
+                <div class="col s12 m6 l3 center-align">
+                    <p>Health Points</p>
+                    <img id="char-panel1" data-panel1="c1" data-toggle="tooltip" title="jim" src="img/${ch}.jpg" alt="${ch}">
+                </div>
+            </div>
+            `)  
     }
 
     // When user clicks icon
     $("#char-container1").on("click", function(event) {
         event.preventDefault();
-        mycharacter = $(this).attr("data-char1")
-        console.log('Your character: ' +  $(this).attr("data-char1"))         
-        updategamedisplay();
-        updatepaneldisplay(mycharacter);
+        if  (mycharacter === "") {
+            mycharacter = $(this).attr("data-char1")
+            console.log('Your character: ' +  $(this).attr("data-char1"))         
+            updategamedisplay();
+            updatepaneldisplay(mycharacter);
+        }
     });
+
+    // When user clicks icon
+    $("#char-container2").on("click", function(event) {
+        event.preventDefault();
+        if  (mycharacter === "") {
+            mycharacter = $(this).attr("data-char2")
+            console.log('Your character: ' +  $(this).attr("data-char2"))         
+            updategamedisplay();
+            updatepaneldisplay(mycharacter);
+        }
+    });
+
+    // When user clicks icon
+    $("#char-container3").on("click", function(event) {
+        event.preventDefault();
+        if  (mycharacter === "") {
+            mycharacter = $(this).attr("data-char3")
+            console.log('Your character: ' +  $(this).attr("data-char3"))         
+            updategamedisplay();
+            updatepaneldisplay(mycharacter);
+        }
+    });
+
+    // When user clicks icon
+    $("#char-container4").on("click", function(event) {
+        event.preventDefault();
+        if  (mycharacter === "") {
+            mycharacter = $(this).attr("data-char4")
+            console.log('Your character: ' +  $(this).attr("data-char4"))         
+            updategamedisplay();
+            updatepaneldisplay(mycharacter);
+        }
+    });
+
+  
 
 })

@@ -19,13 +19,13 @@ const Game = () =>
  
 </head>
 <body>
-    <nav id="mynav" class="black" role="navigation">
+    {/* <nav id="mynav" class="black" role="navigation">
         <div class="nav-wrapper container">
             <a href="/" ><img id="logo-container" data-toggle="tooltip" title="home" class="brand-logo center" src="img/logo.jpg" alt="homelogo" /></a>     
         </div>
-    </nav>
+    </nav> */}
 
-    <div id="index-banner" class="parallax-container game-banner">
+    <div id="game-banner" class="parallax-container">
       <div class="section no-pad-bot">
         <div class="container gamescreen">   
               {/* display logic goes here */}
@@ -33,11 +33,15 @@ const Game = () =>
       </div>
     </div>
  
-    <nav id="mynav" class="black" role="navigation">
-        <div class="nav-wrapper container panelscreen">
-           {/* display current game setting goes here */}
+    <div id="game-footer" class="container">
+      <div class="section">
+        <div id="game-panel"  class="parallax-container">
+            {/* <div class="nav-wrapper container panelscreen"> */}
+              {/* display current game setting goes here */}
+            {/* </div> */}
         </div>
-    </nav>
+      </div>
+    </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
@@ -45,7 +49,7 @@ const Game = () =>
   <script src="js/init.js"></script>
   <script type="text/javascript" src='./js/gameapp.js' />
 
-  </body>
+</body>
 </html>
 
 module.exports = Game
