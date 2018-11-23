@@ -1,5 +1,6 @@
 const fetch = window.fetch
 
+
 $(document).ready(function() {
   
   // Gets Link for Theme Song
