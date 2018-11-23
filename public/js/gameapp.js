@@ -54,7 +54,7 @@ $(document).ready(function() {
                     <h6>Your Target</h6>
                     <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="Bahamut" src="img/t1.jpg" alt="Bahamut"> 
                     <p>Name: Bahamut</p>
-                    <p>HP: ${targhp}</p>m
+                    <p>HP: ${targhp}</p>
                 </li>  
             </div>
             <div class="row set3">                                
