@@ -20,12 +20,30 @@
     background-size: cover;
 }
 
+#game-banner{
+    background-image: url("../img/bg2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .game-banner{
     background-image: url("../img/bg.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 700px;
+}
+
+.gamesec1 {
+    padding: 10px;
+}
+
+.gamesec2 {
+    background-color:black;
+    background-size: auto 100%;
+    height: 100%;
+    color: white;
 }
 
 #menu{
@@ -38,12 +56,11 @@
     border-radius: 50px;
 }
 
-
 .title-name{
     font-family: 'Bungee Inline', cursive;
 }
 
-#download-button{
+#download-button1,#download-button2,#download-button3{
     font-family: 'Black Ops One', cursive;
     font-size: 30px;
 }
@@ -53,6 +70,7 @@
     padding: 5px;
     height: 300px;
     width: 300px;
+    margin-right: 20px;
 }
 
 .section-help{
@@ -74,6 +92,7 @@
     font-weight: bold;
 }
 
+
 @keyframes type{
     0% {
         width:0ch;
@@ -83,7 +102,81 @@
     }
 }
 
-#char-container{
+#char-container1, #char-container2, #char-container3, #char-container4 {
+    align-content: center;
+    width: 200px;
+    height: 200px;
+    margin-right: 20px
+}
+
+.panelscreen{
+    background-color: black;
+    font: 18px;
+    color: white; 
+}
+
+h6{
+    color: lawngreen;
+    font-weight: bold;
+}
+
+
+#mychar{
     width: 300px;
-    height: 300px;
+    height: auto;
+}
+
+#mycharpanel, #mytarpanel{
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0px;
+}
+
+li{
+    display: inline-block;
+    line-height: 1px;
+    margin-left: 10px;
+}
+
+.set1, .set2, .set3, .set4 {
+    margin-top: 1px;
+    margin-bottom: 0px;
+}
+
+#mychar, #mytarget{
+    width: 450px;
+    height: 450px;
+}
+
+.player {
+    display: inline-block;
+    padding: 5px;
+}
+
+.score-board p {
+    font-size: 10px;
+    font-weight: bold;
+    color: yellow;
+}
+
+.score-box {
+border: 3px solid blue;
+padding-top: 30px;
+color: yellow;
+width: 70px;
+height: 70px;
+text-align: center;
+font-weight: bold;
+}
+
+#myattack{
+    width: 100px;
+    height: 100px;
+    margin-top: 400px;
+}
+
+#restart{
+    width: 100px;
+    height: auto;
 }
