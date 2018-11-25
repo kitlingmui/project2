@@ -16,26 +16,25 @@ const Game = () =>
   <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline" rel="stylesheet" />
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
- 
 </head>
 <body>
-    <nav id="mynav" class="black" role="navigation">
-        <div class="nav-wrapper container">
-            <a href="/" ><img id="logo-container" data-toggle="tooltip" title="home" class="brand-logo center" src="img/logo.jpg" alt="homelogo" /></a>     
+    <nav id="mynav" className="black" role="navigation">
+        <div className="nav-wrapper container">
+            <a href="/" ><img id="logo-container" data-toggle="tooltip" title="home" className="brand-logo center" src="img/logo.jpg" alt="homelogo" /></a>     
         </div>
     </nav>
 
-    <div id="index-banner" class="parallax-container game-banner">
-      <div class="section no-pad-bot">
-        <div class="container">    
-            <h1 class="header" id="type-h">Choose your character...</h1>
+    <div id="index-banner" className="parallax-container game-banner">
+      <div className="section no-pad-bot">
+        <div className="container">    
+            <h1 className="header" id="type-h">Choose your character...</h1>
             <img id="char-container"  href="#" src="img/c1.jpg" alt="c1" /> 
             <img id="char-container"  href="#" src="img/c2.jpg" alt="c2" /> 
             <img id="char-container"  href="#" src="img/c3.jpg" alt="c3" /> 
             <img id="char-container"  href="#" src="img/c4.jpg" alt="c4" /> 
         </div>
         <div>
-            <h1 class="header" id="type-h">Choose your target...</h1>
+            <h1 className="header" id="type-h">Choose your target...</h1>
             <img id="char-container"  href="#" src="img/t1.jpg" alt="t1" /> 
             <img id="char-container"  href="#" src="img/t2.jpg" alt="t2" /> 
             <img id="char-container"  href="#" src="img/t3.jpg" alt="t3" /> 
@@ -50,7 +49,8 @@ const Game = () =>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
+  <script src="js/game.js"></script>
+    
   </body>
 </html>
 
