@@ -3,9 +3,36 @@ const bo = 1 // assume we only have 1 boss
 var mycharacter = ""  
 var currcharacter
 var currtarget
-
+var isPlaying = true;
 
 $(document).ready(function() {
+    var mySound;
+  // Gets Link for Theme Song
+  function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
+mySound = new sound("./sound/Fighting.mp3");
+mySound.play(); 
+function togglePlay() {
+  if (isPlaying) {
+    mySound.stop();
+    isPlaying = false;
+  } else {
+    mySound.play();
+    isPlaying = true;
+  }
+};
 
     function displaycharacterselect() {
         // initial game setting
@@ -86,6 +113,9 @@ $(document).ready(function() {
             </div>   
             <div class="row set5 center-align">
                 <a href="/"><img class="responsive-img exitgame-btn" data-panel1="exitgame" data-toggle="tooltip" title="exit game" src="img/exit.jpg" alt="exit game"></a>
+            </div> 
+            <div class="row set5 center-align">
+                <a href="/"><img class="responsive-img soundgame-btn" data-panel1="soundgame" data-toggle="tooltip" title="sound game" src="img/sound.jpg" alt="sound game"></a>
             </div>  
             `)  
     }
@@ -202,6 +232,11 @@ $(document).ready(function() {
     $(document).on("click", ".restart-btn", function(event) {
         event.preventDefault(); 
         displaycharacterselect();
+    });
+    // When on click "Sound" button
+    $(document).on("click", ".soundgame-btn", function(event) {
+        event.preventDefault(); 
+        togglePlay();
     });
 
     //When on click "Attack" button

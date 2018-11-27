@@ -33,8 +33,6 @@ const Game = () =>
     </div>
 
   <script type="text/javascript" src='./js/gameapp.js' />
-  <script type="text/javascript" src='./js/indexapp.js' />
-
   </body>
 </html>
 
