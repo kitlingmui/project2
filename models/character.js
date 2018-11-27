@@ -2,63 +2,40 @@ module.exports = (sequelize, DataTypes) => {
 
     const Character = sequelize.define('Characters', {
         name: DataTypes.STRING,
-        class: DataTypes.STRING,
         attack: DataTypes.INTEGER,
         defense: DataTypes.INTEGER,
         health: DataTypes.INTEGER,
-        hasArmor: DataTypes.BOOLEAN,
-        hasWeapon: DataTypes.BOOLEAN,
-        isEquipped: DataTypes.BOOLEAN,
     });
 
-    //Character.associate = models => {
-    //    Character.hasMany(models.Items, {
-    //        onDelete:'cascade'
-    //    })
-    //   
-    //
-Character.sync()
+Character.sync({ force: true })
 .then(r => {
     Character.bulkCreate([
         {
-            name: 'jim',
-            class: 'Paladin',
-            attack: 100,
-            defense: 90,
-            health: 1000,
-            hasArmor: false,
-            hasWeapon: false,
-            isEquipped: false
+        name: 'Cloud',
+        attack: 90,
+        defense: 140,
+        health: 1000,
         },
+
         {
-            name: 'bob',
-            class: 'Cleric',
-            attack: 30,
-            defense: 60,
-            health: 600,
-            hasArmor: false,
-            hasWeapon: false,
-            isEquipped: false
+        name: 'bob',
+        attack: 80,
+        defense: 80,
+        health: 700,
         },
+
         {
-            name: 'tim',
-            class: 'Scholar',
-            attack: 80,
-            defense: 70,
-            health: 800,
-            hasArmor: false,
-            hasWeapon: false,
-            isEquipped: false
+        name: 'tim',
+        attack: 140,
+        defense: 70,
+        health: 800,
         },
+
         {
-            name: 'rob',
-            class: 'Monk',
-            attack: 90,
-            defense: 80,
-            health: 900,
-            hasArmor: false,
-            hasWeapon: false,
-            isEquipped: false
+        name: 'rob',
+        attack: 120,
+        defense: 80,
+        health: 900,
         }
     ]).catch(e => console.log(e));
 });
