@@ -21,21 +21,21 @@ Character.sync({ force: true })
         name: 'Bob',
         attack: 80,
         defense: 80,
-        health: 700,
+        health: 1000,
         },
 
         {   
         name: 'Tim',
         attack: 140,
         defense: 70,
-        health: 800,
+        health: 1000,
         },
 
         {
         name: 'Rob',
         attack: 120,
         defense: 80,
-        health: 900,
+        health: 1000,
         }
     ]).catch(e => console.log(e));
 });
