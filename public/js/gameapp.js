@@ -163,8 +163,8 @@ $(document).ready(function() {
             // get random target's name, hp from database  
             $.get("/api/Boss/"+bo, function(data2) {    
                 displaystart (data1, data2)
-                console.log(data1)
-                console.log(data2)
+                // console.log(data1)
+                // console.log(data2)
             })        
         })
     }
