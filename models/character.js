@@ -2,18 +2,16 @@ module.exports = (sequelize, DataTypes) => {
 
     const Character = sequelize.define('Characters', {
         name: DataTypes.STRING,
-        class: DataTypes.STRING,
         attack: DataTypes.INTEGER,
         defense: DataTypes.INTEGER,
         health: DataTypes.INTEGER,
     });
 
-Character.sync()
+Character.sync({ force: true })
 .then(r => {
     Character.bulkCreate([
         {
-        name: 'jim',
-        class: 'Paladin',
+        name: 'Cloud',
         attack: 90,
         defense: 140,
         health: 1000,
@@ -21,7 +19,6 @@ Character.sync()
 
         {
         name: 'bob',
-        class: 'Cleric',
         attack: 80,
         defense: 80,
         health: 700,
@@ -29,7 +26,6 @@ Character.sync()
 
         {
         name: 'tim',
-        class: 'Scholar',
         attack: 140,
         defense: 70,
         health: 800,
@@ -37,7 +33,6 @@ Character.sync()
 
         {
         name: 'rob',
-        class: 'Monk',
         attack: 120,
         defense: 80,
         health: 900,
