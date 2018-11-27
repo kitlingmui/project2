@@ -14,30 +14,22 @@ const Game = () =>
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Bungee+Inline" rel="stylesheet" />
-    {/* <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/> */}
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
  
 </head>
 <body>
-    <nav id="mynav" class="black" role="navigation">
-        <div class="nav-wrapper container">
-            <a href="/" ><img id="logo-container" data-toggle="tooltip" title="home" class="brand-logo center" src="img/logo.jpg" alt="homelogo" /></a>     
-        </div>
-    </nav>
-
-    <div id="index-banner" class="parallax-container game-banner">
-      <div class="section no-pad-bot">
-        <div class="container gamescreen">   
-              {/* display logic goes here */}
+    <div id="game-banner" className="parallax-container game-banner">
+      <div className="section no-pad-bot">
+        <div className="row gamescreen">   
+            <div className="col s12 m6 l10 left-align gamesec1">
+              {/* game display goes here */}
+            </div>
+            <div className="col s12 m6 l2 left-align gamesec2">
+              {/* game panel goes here */}
+            </div>   
         </div>
       </div>
     </div>
- 
-    <nav id="mynav" class="black" role="navigation">
-        <div class="nav-wrapper container panelscreen">
-           {/* display current game setting goes here */}
-        </div>
-    </nav>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
