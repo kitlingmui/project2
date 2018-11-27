@@ -39,6 +39,9 @@ const Index = () =>
                 <div className="row center">
                     <a href="/help" id="download-button3" className="btn-large waves-effect waves-light orange darken-1">Help</a>
                 </div>
+                <div className="row center">
+                    <a id="download-button4" className="btn-large waves-effect waves-light orange darken-1">Sound</a>
+                </div>
                 </div>
 
             </div>
