@@ -18,21 +18,21 @@ Character.sync({ force: true })
         },
 
         {
-        name: 'bob',
+        name: 'Bob',
         attack: 80,
         defense: 80,
         health: 700,
         },
 
-        {
-        name: 'tim',
+        {   
+        name: 'Tim',
         attack: 140,
         defense: 70,
         health: 800,
         },
 
         {
-        name: 'rob',
+        name: 'Rob',
         attack: 120,
         defense: 80,
         health: 900,
