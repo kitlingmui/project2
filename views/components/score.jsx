@@ -35,6 +35,8 @@ const Score = () =>
                         <div className="icon-block">
                             <h4 className="center brown-text"><i className="material-icons"></i></h4>
                             <h5 className="center">Your Score</h5>
+                            <p className="center light">Win: </p>
+                            <p className="center light">Lose: </p>
                             <p className="center light">To be updated</p>
                         </div>
                         </div>
