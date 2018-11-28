@@ -11,7 +11,7 @@ Character.sync({ force: true })
 .then(r => {
     Character.bulkCreate([
         {
-        name: 'Cloud',
+        name: 'Jim',
         attack: 90,
         defense: 140,
         health: 1000,
