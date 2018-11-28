@@ -1,6 +1,8 @@
 const fetch = window.fetch
 const bo = 1 // assume we only have 1 boss
 var myCharacter = ""  
+var win = 0 
+var lose = 0
 var currCharacter
 var currTarget
 
@@ -49,7 +51,7 @@ $(document).ready(function() {
                     <h6>Your Character</h6>
                     <img class="responsive-img" id="mycharpanel" data-panel1="mychar" data-toggle="tooltip" title="${currCharacter.name}" src="img/c${currCharacter.id}.jpg" alt="c${currCharacter.id}"> 
                     <p>Name: ${currCharacter.name}</p>
-                    <p>HP: ${currCharacter.health}</p>
+                    <p>Wins: ${win}</p>
                 </li>   
             </div>
             <div class="row set2">
@@ -57,7 +59,7 @@ $(document).ready(function() {
                     <h6>Your Target</h6>
                     <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="${currTarget.name}" src="img/t${currTarget.id}.jpg" alt="t${currTarget.id}"> 
                     <p>Name: ${currTarget.name}</p>
-                    <p>HP: ${currTarget.health}</p>
+                    <p>Wins: ${lose}</p>
                 </li>  
             </div>
             <div class="row set3">                                
@@ -116,7 +118,7 @@ $(document).ready(function() {
                     <h6>Your Character</h6>
                     <img class="responsive-img" id="mycharpanel" data-panel1="mychar" data-toggle="tooltip" title="${currCharacter.name}" src="img/c${currCharacter.id}.jpg" alt="c${currCharacter.id}"> 
                     <p>Name: ${currCharacter.name}</p>
-                    <p>HP: ${currCharacter.health}</p>
+                    <p>Wins: ${win}</p>
                 </li>   
             </div>
             <div class="row set2">
@@ -124,7 +126,7 @@ $(document).ready(function() {
                     <h6>Your Target</h6>
                     <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="${currTarget.name}" src="img/t${currTarget.id}.jpg" alt="t${currTarget.id}"> 
                     <p>Name: ${currTarget.name}</p>
-                    <p>HP: ${currTarget.health}</p>
+                    <p>Wins: ${lose}</p>
                 </li>  
             </div>
             <div class="row set3">                                
@@ -213,7 +215,7 @@ $(document).ready(function() {
         // When target attack you by random 1/10 chance
         var randChance = Math.floor(Math.random() * 10)
         var randTargetDefense = Math.floor(Math.random() * currTarget.defense)
-        var randCurrDefense = Math.floor(Math.random()* currCharacter.defense)
+        var randCharacterDefense = Math.floor(Math.random()* currCharacter.defense)
         // console.log(randChance)
         // console.log(randCurrDefense)
         
@@ -221,7 +223,7 @@ $(document).ready(function() {
         if (randChance <= 2)
         // When the Boss attacks you
         {
-            currCharacter.health = currCharacter.health - (currTarget.attack - randCurrDefense)
+            currCharacter.health = currCharacter.health - (currTarget.attack - randCharacterDefense)
         }
         // When you attack target 
         else 
@@ -233,11 +235,16 @@ $(document).ready(function() {
         // When Health is 0
         if (currTarget.health <= 0)
         { 
+
             displayGameover(currCharacter, currTarget, 'You won the game!')
+            win++
+            console.log(win)
         } 
         else if (currCharacter.health <= 0)
         {
             displayGameover(currCharacter, currTarget, 'You lose! Try Next Time!')
+            lose++
+            console.log(lose)
         }
         else 
         {
