@@ -11,9 +11,9 @@ Boss.sync({ force: true })
     .then(r => {
     Boss.create({
         name: 'Bahamut',
-        attack: 250,
+        attack: 150,
         defense: 60,
-        health: 4000,
+        health: 200,
         }).catch(e => console.log(e));
 });
     return Boss

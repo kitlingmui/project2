@@ -1,8 +1,10 @@
 const fetch = window.fetch
 const bo = 1 // assume we only have 1 boss
-var mycharacter = ""  
-var currcharacter
-var currtarget
+var myCharacter = ""  
+var win = 0 
+var lose = 0
+var currCharacter
+var currTarget
 var isPlaying = true;
 
 $(document).ready(function() {
@@ -34,9 +36,9 @@ function togglePlay() {
   }
 };
 
-    function displaycharacterselect() {
+    function displayCharacterSelect() {
         // initial game setting
-        mycharacter = ""
+        myCharacter = ""
 
         $(".gamesec1").empty()
         $(".gamesec2").empty()
@@ -49,23 +51,23 @@ function togglePlay() {
         `) 
     }
 
-    displaycharacterselect();
+    displayCharacterSelect();
 
     // Display Current Game 
-    function displaystart (chardata, targdata) {
-        currcharacter = chardata
-        currtarget = targdata
+    function displayStart (charData, targData) {
+        currCharacter = charData
+        currTarget = targData
 
         $(".gamesec1").html(`
             <div class="gamesection center-align">
                 <div class="gameplayer col s12 m6 l4 center-align">   
-                    <img class="responsive-img" id="mychar" data-mychar="mychar" data-toggle="tooltip" title="${currcharacter.name}" src="img/c${currcharacter.id}.gif" alt="c${currcharacter.id}">                    
+                    <img class="responsive-img" id="mychar" data-mychar="mychar" data-toggle="tooltip" title="${currCharacter.name}" src="img/c${currCharacter.id}.gif" alt="c${currCharacter.id}">                    
                 </div>
                 <div class="gamemiddle col s12 m6 l4 center-align"> 
                     <img class="responsive-img" id="myattack" data-toggle="tooltip" title="Click Me" src="img/attack.jpg" alt="attack">
                 </div>
                 <div class="gameenemy col s12 m6 l4 center-align"> 
-                    <img class="responsive-img" id="mytarget" data-mychar="mytarget" data-toggle="tooltip" title="${currtarget.name}" src="img/t${currtarget.id}.jpg" alt="t${currtarget.id}">                                                                        
+                    <img class="responsive-img" id="mytarget" data-mychar="mytarget" data-toggle="tooltip" title="${currTarget.name}" src="img/t${currTarget.id}.jpg" alt="t${currTarget.id}">                                                                        
                 </div>
             </div>       
         `)  
@@ -74,17 +76,17 @@ function togglePlay() {
             <div class="row set1">
                 <li>
                     <h6>Your Character</h6>
-                    <img class="responsive-img" id="mycharpanel" data-panel1="mychar" data-toggle="tooltip" title="${currcharacter.name}" src="img/c${currcharacter.id}.jpg" alt="c${currcharacter.id}"> 
-                    <p>Name: ${currcharacter.name}</p>
-                    <p>HP: ${currcharacter.health}</p>
+                    <img class="responsive-img" id="mycharpanel" data-panel1="mychar" data-toggle="tooltip" title="${currCharacter.name}" src="img/c${currCharacter.id}.jpg" alt="c${currCharacter.id}"> 
+                    <p>Name: ${currCharacter.name}</p>
+                    <p>Wins: ${win}</p>
                 </li>   
             </div>
             <div class="row set2">
                 <li>
                     <h6>Your Target</h6>
-                    <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="${currtarget.name}" src="img/t${currtarget.id}.jpg" alt="t${currtarget.id}"> 
-                    <p>Name: ${currtarget.name}</p>
-                    <p>HP: ${currtarget.health}</p>
+                    <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="${currTarget.name}" src="img/t${currTarget.id}.jpg" alt="t${currTarget.id}"> 
+                    <p>Name: ${currTarget.name}</p>
+                    <p>Wins: ${lose}</p>
                 </li>  
             </div>
             <div class="row set3">                                
@@ -93,17 +95,17 @@ function togglePlay() {
                     <div class="player col s12 m6 l6 center-align">   
                         <li>                    
                             <div class="score-box">
-                                ${currcharacter.health}                              
+                                ${currCharacter.health}                              
                             </div>
-                            <p>${currcharacter.name}</p>
+                            <p>${currCharacter.name}</p>
                         </li>                          
                     </div>
                     <div class="enemy col s12 m6 l6 center-align">                        
                         <li>
                             <div class="score-box">
-                                ${currtarget.health}
+                                ${currTarget.health}
                             </div>
-                            <p>${currtarget.name}</p>
+                            <p>${currTarget.name}</p>
                         </li>                               
                     </div>
                 </div>
@@ -121,21 +123,21 @@ function togglePlay() {
     }
 
     // Display Gameover 
-    function displaygameover (chardata, targdata, status) {
-        currcharacter = chardata
-        currtarget = targdata
+    function displayGameover (charData, targData, status) {
+        currCharacter = charData
+        currTarget = targData
 
         $(".gamesec1").html(`
             <div class="gamesection center-align">
                 <div class="gameplayer col s12 m6 l4 center-align">   
-                    <img class="responsive-img" id="mychar" data-mychar="mychar" data-toggle="tooltip" title="${currcharacter.name}" src="img/c${currcharacter.id}.jpg" alt="c${currcharacter.id}">                    
+                    <img class="responsive-img" id="mychar" data-mychar="mychar" data-toggle="tooltip" title="${currCharacter.name}" src="img/c${currCharacter.id}.jpg" alt="c${currCharacter.id}">                    
                 </div>
                 <div class="gamemiddle col s12 m6 l4 center-align"> 
                     <img class="responsive-img" id="over" data-toggle="tooltip" title="Click Me" src="img/gameover.jpg" alt="over">
                     <h4>${status}</h4>
                 </div>
                 <div class="gameenemy col s12 m6 l4 center-align"> 
-                    <img class="responsive-img" id="mytarget" data-mychar="mytarget" data-toggle="tooltip" title="${currtarget.name}" src="img/t${currtarget.id}.jpg" alt="t${currtarget.id}">                                                                        
+                    <img class="responsive-img" id="mytarget" data-mychar="mytarget" data-toggle="tooltip" title="${currTarget.name}" src="img/t${currTarget.id}.jpg" alt="t${currTarget.id}">                                                                        
                 </div>
             </div>       
         `)  
@@ -144,17 +146,17 @@ function togglePlay() {
             <div class="row set1">
                 <li>
                     <h6>Your Character</h6>
-                    <img class="responsive-img" id="mycharpanel" data-panel1="mychar" data-toggle="tooltip" title="${currcharacter.name}" src="img/c${currcharacter.id}.jpg" alt="c${currcharacter.id}"> 
-                    <p>Name: ${currcharacter.name}</p>
-                    <p>HP: ${currcharacter.health}</p>
+                    <img class="responsive-img" id="mycharpanel" data-panel1="mychar" data-toggle="tooltip" title="${currCharacter.name}" src="img/c${currCharacter.id}.jpg" alt="c${currCharacter.id}"> 
+                    <p>Name: ${currCharacter.name}</p>
+                    <p>Wins: ${win}</p>
                 </li>   
             </div>
             <div class="row set2">
                 <li>
                     <h6>Your Target</h6>
-                    <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="${currtarget.name}" src="img/t${currtarget.id}.jpg" alt="t${currtarget.id}"> 
-                    <p>Name: ${currtarget.name}</p>
-                    <p>HP: ${currtarget.health}</p>
+                    <img class="responsive-img" id="mytarpanel" data-panel1="mytar" data-toggle="tooltip" title="${currTarget.name}" src="img/t${currTarget.id}.jpg" alt="t${currTarget.id}"> 
+                    <p>Name: ${currTarget.name}</p>
+                    <p>Wins: ${lose}</p>
                 </li>  
             </div>
             <div class="row set3">                                
@@ -163,17 +165,17 @@ function togglePlay() {
                     <div class="player col s12 m6 l6 center-align">   
                         <li>                    
                             <div class="score-box">
-                                ${currcharacter.health}                              
+                                ${currCharacter.health}                              
                             </div>
-                            <p>${currcharacter.name}</p>
+                            <p>${currCharacter.name}</p>
                         </li>                          
                     </div>
                     <div class="enemy col s12 m6 l6 center-align">                        
                         <li>
                             <div class="score-box">
-                                ${currtarget.health}
+                                ${currTarget.health}
                             </div>
-                            <p>${currtarget.name}</p>
+                            <p>${currTarget.name}</p>
                         </li>                               
                     </div>
                 </div>
@@ -187,12 +189,12 @@ function togglePlay() {
             `)  
     }
 
-    function getdata (ch){
+    function getData (ch){
         // get selected character's name, hp from database
         $.get("/api/Characters/"+ch, function(data1) {
             // get random target's name, hp from database  
             $.get("/api/Boss/"+bo, function(data2) {    
-                displaystart (data1, data2)
+                displayStart (data1, data2)
                 // console.log(data1)
                 // console.log(data2)
             })        
@@ -202,36 +204,36 @@ function togglePlay() {
     // When on click characters, display start and status panel
     $(document).on("click", "#char-container1", function(event) {
         event.preventDefault();
-        mycharacter = $(this).attr("data-char1")
+        myCharacter = $(this).attr("data-char1")
         console.log('Your character: ' +  $(this).attr("data-char1")) 
-        getdata (mycharacter) 
+        getData (myCharacter) 
     });
 
     $(document).on("click", "#char-container2", function(event) {
         event.preventDefault();
-        mycharacter = $(this).attr("data-char2")
+        myCharacter = $(this).attr("data-char2")
         console.log('Your character: ' +  $(this).attr("data-char2"))         
-        getdata (mycharacter) 
+        getData (myCharacter) 
     });
 
     $(document).on("click", "#char-container3", function(event) {
         event.preventDefault();
-        mycharacter = $(this).attr("data-char3")
+        myCharacter = $(this).attr("data-char3")
         console.log('Your character: ' +  $(this).attr("data-char3"))         
-        getdata (mycharacter) 
+        getData (myCharacter) 
     });
 
     $(document).on("click", "#char-container4", function(event) {
         event.preventDefault();
-        mycharacter = $(this).attr("data-char4")
+        myCharacter = $(this).attr("data-char4")
         console.log('Your character: ' +  $(this).attr("data-char4"))         
-        getdata (mycharacter) 
+        getData (myCharacter) 
     });
 
     //When on click "Restart" button
     $(document).on("click", ".restart-btn", function(event) {
         event.preventDefault(); 
-        displaycharacterselect();
+        displayCharacterSelect();
     });
     // When on click "Sound" button
     $(document).on("click", ".soundgame-btn", function(event) {
@@ -242,41 +244,96 @@ function togglePlay() {
     //When on click "Attack" button
     $(document).on("click", "#myattack", function(event) {
         event.preventDefault(); 
-        currentnumber =  currcharacter.id;
-        currcharacter.id = 5;
-        $("#mycharpanel").attr("src","img/c" + currentnumber  +".gif");
-        setTimeout(
-            function() {
-                currcharacter.id = currentnumber;
-                $("#mychar").attr("src","img/c" + currcharacter.id +".gif");
-            },1800
-        );
+        isClick = true;
+        currentnumber =  currCharacter.id;
+        if (currentnumber === 1 )
+        {
+            currCharacter.id = 5;
+            $("#mycharpanel").attr("src","img/c" + currentnumber  +".gif");
+            setTimeout(
+                function() {
+                    currCharacter.id = currentnumber;
+                    $("#mychar").attr("src","img/c" + currCharacter.id +".gif");
+                },1600
+            );
+        }
+        if (currentnumber === 4 )
+        {
+            currCharacter.id = 6;
+            $("#mycharpanel").attr("src","img/c" + currentnumber  +".gif");
+            setTimeout(
+                function() {
+                    currCharacter.id = currentnumber;
+                    $("#mychar").attr("src","img/c" + currCharacter.id +".gif");
+                },1600
+            );
+        }
+        if (currentnumber === 3 )
+        {
+            currCharacter.id = 7;
+            $("#mycharpanel").attr("src","img/c" + currentnumber  +".gif");
+            setTimeout(
+                function() {
+                    currCharacter.id = currentnumber;
+                    $("#mychar").attr("src","img/c" + currCharacter.id +".gif");
+                },1600
+            );
+        }
+        if (currentnumber === 2 )
+        {
+            currCharacter.id = 8;
+            $("#mycharpanel").attr("src","img/c" + currentnumber  +".gif");
+            setTimeout(
+                function() {
+                    currCharacter.id = currentnumber;
+                    $("#mychar").attr("src","img/c" + currCharacter.id +".gif");
+                },3000
+            );
+        }
+        else{}
         //currcharacter.id = currentnumber;
         // console.log(currcharacter)
         // console.log(currtarget)
 
         // When target attack you by random 1/10 chance
-        var randchance = Math.floor(Math.random() * 10)
+        var randChance = Math.floor(Math.random() * 10)
+        var randTargetDefense = Math.floor(Math.random() * currTarget.defense)
+        var randCharacterDefense = Math.floor(Math.random()* currCharacter.defense)
+        // console.log(randChance)
+        // console.log(randCurrDefense)
+        
 
-        if (randchance == 1)
+        if (randChance <= 2)
+        // When the Boss attacks you
         {
-            currcharacter.health = currcharacter.health - currtarget.attack + currcharacter.defense  
+            currCharacter.health = currCharacter.health - (currTarget.attack - randCharacterDefense)
         }
-      
-        // When you attack target (everytime when you click attack)
-        currtarget.health = currtarget.health - currcharacter.attack
-
-        if (currtarget.health <= 0)
-        { 
-            displaygameover(currcharacter, currtarget, 'You won the game!')
-        } 
-        else if (currcharacter.health <= 0)
+        // When you attack target 
+        else 
         {
-            displaygameover(currcharacter, currtarget, 'You lose the game!')
+            currTarget.health = currTarget.health - (currCharacter.attack - randTargetDefense)
+        }
+
+
+        // When Health is 0
+        if (currTarget.health <= 0)
+        { 
+
+            displayGameover(currCharacter, currTarget, 'You won the game!')
+            win++
+            sessionStorage.setItem('win', win);
+            console.log(win)
+        } 
+        else if (currCharacter.health <= 0)
+        {
+            displayGameover(currCharacter, currTarget, 'You lose! Try Next Time!')
+            lose++
+            sessionStorage.setItem('lose', lose);
+            console.log(lose)
         }
         else 
         {
-            displaystart(currcharacter, currtarget)
+            displayStart(currCharacter, currTarget)
         }
 
     });

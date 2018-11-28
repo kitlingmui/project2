@@ -5,7 +5,7 @@ const Index = () =>
     <head>
     <meta httpEquiv="Content-Type" content="text/html; charSet=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title>Index</title>
+    <title>Final Project 2</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -27,7 +27,7 @@ const Index = () =>
         <div id="index-banner" className="parallax-container">
         <div className="section no-pad-bot">
             <div className="container">
-                <h1 className="header center deep-orange-text text-darken-1 title-name">RPG Game</h1>
+                <h1 className="header center deep-orange-text text-darken-1 title-name">Naruto RPG</h1>
 
                 <div className="container" id="menu">
                 <div className="row center">

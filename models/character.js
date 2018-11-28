@@ -14,28 +14,28 @@ Character.sync({ force: true })
         name: 'Naruto',
         attack: 90,
         defense: 140,
-        health: 1000,
+        health: 100,
         },
 
         {
         name: 'Kakashi',
         attack: 80,
         defense: 80,
-        health: 700,
+        health: 1000,
         },
 
         {   
         name: 'Gaara',
         attack: 140,
         defense: 70,
-        health: 800,
+        health: 1000,
         },
 
         {
         name: 'Sasuke',
         attack: 120,
         defense: 80,
-        health: 900,
+        health: 1000,
         }
     ]).catch(e => console.log(e));
 });

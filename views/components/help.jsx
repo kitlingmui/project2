@@ -3,7 +3,7 @@ const React = require('react')
 const Help = () =>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Help</title>
 
@@ -34,7 +34,7 @@ const Help = () =>
                         <div className="icon-block">
                             <h4 className="center brown-text"><i className="material-icons">videogame_asset</i></h4>
                             <h5 className="center">Objective</h5>
-                            <p className="center light">Your task is to kill the target to win the game.</p>
+                            <p className="center light">Pick your legendary Hero, then take down Bahamut and claim victory!.</p>
                         </div>
                         </div>
                 
@@ -42,7 +42,8 @@ const Help = () =>
                         <div className="icon-block">
                             <h4 className="center brown-text"><i className="material-icons">group</i></h4>
                             <h5 className="center">How to play</h5>
-                            <p className="center light">First of all, choose your charater. You will get a random weapon to attack your target. Everytime when you hit the target, you will earn health points and your target will lose their health points.</p>
+                            <p className="center light">Click the START button and then choose your charater. Once the game starts it will be you vs the target. Everytime when you click the attack button, you will damage your opponent and your target will lose their health points.
+                                Bahamut will then attack back in return until you have either won or lost the game!</p>
                         </div>
                         </div>
                 
@@ -50,7 +51,7 @@ const Help = () =>
                             <div className="icon-block">
                                 <h4 className="center brown-text"><i className="material-icons">grade</i></h4>
                                 <h5 className="center">Check your score</h5>                  
-                                <p className="center light">This can view score history on score page.</p>
+                                <p className="center light">You can view your win and loss history in the SCORE section.</p>
                             </div>
                         </div>
                     </div>

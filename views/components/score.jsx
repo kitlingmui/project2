@@ -35,7 +35,9 @@ const Score = () =>
                         <div className="icon-block">
                             <h4 className="center brown-text"><i className="material-icons"></i></h4>
                             <h5 className="center">Your Score</h5>
-                            <p className="center light">To be update</p>
+                            <p className="center light win">Win: </p>
+                            <p className="center light lose">Lose: </p>
+                            <p className="center light">To be updated</p>
                         </div>
                         </div>
                     </div>
@@ -66,8 +68,8 @@ const Score = () =>
         </div>
     </footer>
 
-  <script type="text/javascript" src='./js/indexapp.js' />
 
+  <script type="text/javascript" src='./js/score.js' />
   </body>
 </html>
 
