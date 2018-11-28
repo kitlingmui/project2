@@ -11,28 +11,28 @@ Character.sync({ force: true })
 .then(r => {
     Character.bulkCreate([
         {
-        name: 'Cloud',
+        name: 'Naruto',
         attack: 90,
         defense: 140,
         health: 1000,
         },
 
         {
-        name: 'Bob',
+        name: 'Kakashi',
         attack: 80,
         defense: 80,
         health: 700,
         },
 
         {   
-        name: 'Tim',
+        name: 'Gaara',
         attack: 140,
         defense: 70,
         health: 800,
         },
 
         {
-        name: 'Rob',
+        name: 'Sasuke',
         attack: 120,
         defense: 80,
         health: 900,

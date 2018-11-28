@@ -42,10 +42,10 @@ function togglePlay() {
         $(".gamesec2").empty()
         $(".gamesec1").html(`
         <h1 class="header" id="type-h">Choose your character...</h1>
-        <img class="responsive-img" id="char-container1" data-char1="1" data-toggle="tooltip" title="Cloud" src="img/c1.jpg" alt="c1"> 
-        <img class="responsive-img" id="char-container2" data-char2="2" data-toggle="tooltip" title="Bob" src="img/c2.jpg" alt="c2"> 
-        <img class="responsive-img" id="char-container3" data-char3="3" data-toggle="tooltip" title="Tim" src="img/c3.jpg" alt="c3"> 
-        <img class="responsive-img" id="char-container4" data-char4="4" data-toggle="tooltip" title="Rob" src="img/c4.jpg" alt="c4">   
+        <img class="responsive-img" id="char-container1" data-char1="1" data-toggle="tooltip" title="Naruto" src="img/c1.gif" alt="c1"> 
+        <img class="responsive-img" id="char-container2" data-char2="2" data-toggle="tooltip" title="Kakashi" src="img/c2.gif" alt="c2"> 
+        <img class="responsive-img" id="char-container3" data-char3="3" data-toggle="tooltip" title="Gaara" src="img/c3.gif" alt="c3"> 
+        <img class="responsive-img" id="char-container4" data-char4="4" data-toggle="tooltip" title="Sasuke" src="img/c4.gif" alt="c4">   
         `) 
     }
 
@@ -59,7 +59,7 @@ function togglePlay() {
         $(".gamesec1").html(`
             <div class="gamesection center-align">
                 <div class="gameplayer col s12 m6 l4 center-align">   
-                    <img class="responsive-img" id="mychar" data-mychar="mychar" data-toggle="tooltip" title="${currcharacter.name}" src="img/c${currcharacter.id}.jpg" alt="c${currcharacter.id}">                    
+                    <img class="responsive-img" id="mychar" data-mychar="mychar" data-toggle="tooltip" title="${currcharacter.name}" src="img/c${currcharacter.id}.gif" alt="c${currcharacter.id}">                    
                 </div>
                 <div class="gamemiddle col s12 m6 l4 center-align"> 
                     <img class="responsive-img" id="myattack" data-toggle="tooltip" title="Click Me" src="img/attack.jpg" alt="attack">
@@ -242,6 +242,9 @@ function togglePlay() {
     //When on click "Attack" button
     $(document).on("click", "#myattack", function(event) {
         event.preventDefault(); 
+        console.log("aaa")
+        //document.getElementById("mychar").src = "/img/c1.jpg";
+        //$("#mychar").attr("src","/img/c1.jpg");
         // console.log(currcharacter)
         // console.log(currtarget)
 

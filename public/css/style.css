@@ -149,6 +149,11 @@ li{
     height: 450px;
 }
 
+#char-container1, #char-container2, #char-container3, #char-container4{
+    width: 250px;
+    height: 200px;
+}
+
 .player {
     display: inline-block;
     padding: 5px;
