@@ -242,9 +242,16 @@ function togglePlay() {
     //When on click "Attack" button
     $(document).on("click", "#myattack", function(event) {
         event.preventDefault(); 
-        console.log("aaa")
-        //document.getElementById("mychar").src = "/img/c1.jpg";
-        //$("#mychar").attr("src","/img/c1.jpg");
+        currentnumber =  currcharacter.id;
+        currcharacter.id = 5;
+        $("#mycharpanel").attr("src","img/c" + currentnumber  +".gif");
+        setTimeout(
+            function() {
+                currcharacter.id = currentnumber;
+                $("#mychar").attr("src","img/c" + currcharacter.id +".gif");
+            },1800
+        );
+        //currcharacter.id = currentnumber;
         // console.log(currcharacter)
         // console.log(currtarget)
 
