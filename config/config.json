@@ -1,4 +1,12 @@
 {
+  "local": {
+    "username": "root",
+    "password": "admin",
+    "database": "game_db",
+    "host": "127.0.0.1",
+    "port": 3306,
+    "dialect": "mysql"
+  },
     "development": {
       "username": "root",
       "password": "admin",
