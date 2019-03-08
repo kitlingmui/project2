@@ -9,7 +9,7 @@
   },
     "development": {
       "username": "root",
-      "password": "admin",
+      "password": "rootroot",
       "database": "game_db",
       "host": "127.0.0.1",
       "port": 3306,
@@ -17,18 +17,14 @@
     },
     "test": {
       "username": "root",
-      "password": "admin",
+      "password": "rootroot",
       "database": "game_db",
       "host": "127.0.0.1",
       "port": 3306,
       "dialect": "mysql"
     },
     "production": {
-      "username": "root",
-      "password": "admin",
-      "database": "game_db",
-      "host": "127.0.0.1",
-      "port": 3306,
+      "use_env_variable": "JAWSDB_URL",
       "dialect": "mysql"
     }
   }

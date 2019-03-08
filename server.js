@@ -4,6 +4,8 @@ const SQLZ = require('sequelize');
 const path = require('path');
 const bodyparser = require('body-parser')
 
+var PORT = process.env.PORT || 3000;
+
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
@@ -18,7 +20,7 @@ sequelize.authenticate().then(() => console.log('Sucessfull')).catch(e => consol
 
 require('./routes')(app)
 require('./models').sequelize.sync().then(() => {
-    app.listen(3000, () => console.log('http://localhost:3000'));     
+    app.listen(PORT, () => console.log("App Listening on PORT" + PORT));     
 });
 
 
